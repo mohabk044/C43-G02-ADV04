@@ -8,19 +8,28 @@ namespace Assignment
 {
     internal class BookFunctions
     {
-        public static string? GetTitle(Book book)
-        {
-            return book.Title;
-        }
+        #region Q1 
+        //public static string? GetTitle(Book book)
+        //{
+        //    return book.Title;
+        //}
 
-        public static string? GetAuthors(Book book)
-        {
-            return book.Authors;
-        }
+        //public static string? GetAuthors(Book book)
+        //{
+        //    return book.Authors;
+        //}
 
-        public static decimal GetPrice(Book book)
+        //public static decimal GetPrice(Book book)
+        //{
+        //    return book.Price;
+        //} 
+        #endregion
+
+        #region Q2
+        public static string FindBookByTitle(string title)
         {
-            return book.Price;
+            return $"The book is : {title}";
         }
+        #endregion
     }
 }

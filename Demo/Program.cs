@@ -15,6 +15,7 @@
             int count = reference.Invoke("Mostafa MOHamed");
             // int count = reference("Hello World"); //Syntsx Sugar
             Console.WriteLine(count);
+
             #endregion
         }
     }

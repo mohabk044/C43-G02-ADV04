@@ -39,10 +39,33 @@
             #endregion
 
             #region Example 02 [With Generics]
-            string[] Names = { "Ali", "Mostafa", "Osama", "Adel" };
-            SortingTypesFuncDelegate<string> sortingType = SortingTypes.SortAsc;
-            SortingAlgorithms<string>.BubbleSort(Names, sortingType);
-            foreach (string item in Names)
+            //string[] Names = {"Ali","Mostafa","Osama","Adel"};
+            //SortingTypesFuncDelegate<string> sortingType = SortingTypes.SortAsc;
+            //SortingAlgorithms<string>.BubbleSort(Names, sortingType);
+            //foreach (string item in Names)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Example 03 [With Generics]
+            List<int> Odd = Enumerable.Range(0, 100).ToList();
+            List<int> OddNumbers = Helper.FindNumbers(Odd, Conditions.CheckOdd);
+            foreach (int item in OddNumbers)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("****************************************");
+            List<int> Even = Enumerable.Range(0, 100).ToList();
+            List<int> EvenNumbers = Helper.FindNumbers(Even, Conditions.CheckEven);
+            foreach (int item in EvenNumbers)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("****************************************");
+            List<int> Divisable7 = Enumerable.Range(0, 100).ToList();
+            List<int> NumbersDivisableBySeven = Helper.FindNumbers(Divisable7, Conditions.CheckDivisableBySeven);
+            foreach (int item in NumbersDivisableBySeven)
             {
                 Console.WriteLine(item);
             }

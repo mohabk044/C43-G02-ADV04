@@ -72,13 +72,25 @@
             #endregion
 
             #region Delegate Example 03 [With Generics]
-            List<string> Names = new List<string> { "Ali", "Mostafa", "Osama", "Adel" };
-            ConditionsFuncDelegate<String> conditionsFuncDelegate = Conditions.CheckStringLength;
-            List<string> StingResult = Helper.FindElements(Names, conditionsFuncDelegate);
-            foreach (string item in StingResult)
-            {
-                Console.WriteLine(item);
-            }
+            //List<string> Names = new List<string> { "Ali", "Mostafa", "Osama", "Adel" };
+            //ConditionsFuncDelegate<String> conditionsFuncDelegate = Conditions.CheckStringLength;
+            //List<string> StingResult = Helper.FindElements(Names, conditionsFuncDelegate);
+            //foreach (string item in StingResult)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Built-in Delegate
+            Predicate<int> predicate = SomeFunctions.Test;
+            predicate.Invoke(5);
+            //predicate(10); //Syntsx Sugar
+            //----------------------------------------------
+            Func<int, string> func = SomeFunctions.Cast;
+            func.Invoke(10);
+            //-------------------------------------------------
+            Action<string> action = SomeFunctions.Print;
+            action.Invoke("Mostafa");
             #endregion
         }
     }

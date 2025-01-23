@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    public delegate bool ConditionsFuncDelegate(int number);
+    //public delegate bool ConditionsFuncDelegate(int number);
+    public delegate bool ConditionsFuncDelegate<T>(T X);
     internal class Helper
     {
         public static List<int> FindOddNumbers(List<int> numbers)
@@ -48,16 +49,17 @@ namespace Demo
             }
             return Result;
         }
-        public static List<int> FindNumbers(List<int> numbers, ConditionsFuncDelegate condition)
+        public static List<T> FindElements<T>(List<T> elements, ConditionsFuncDelegate<T> condition)
         {
-            List<int> Result = new List<int>();
-            if (numbers is not null && condition is not null)
+            List<T> Result = new List<T>();
+            if (elements is not null && condition is not null)
             {
-                for (int i = 0; i < numbers.Count; i++)
+                for (int i = 0; i < elements.Count; i++)
                 {
-                    if (condition.Invoke(numbers[i]))
-                        Result.Add(numbers[i]);
+                    if (condition.Invoke(elements[i]))
+                        Result.Add(elements[i]);
                 }
+                return Result;
             }
             return Result;
         }

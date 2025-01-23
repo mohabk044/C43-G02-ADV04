@@ -48,24 +48,34 @@
             //}
             #endregion
 
-            #region Example 03 [With Generics]
-            List<int> Odd = Enumerable.Range(0, 100).ToList();
-            List<int> OddNumbers = Helper.FindNumbers(Odd, Conditions.CheckOdd);
-            foreach (int item in OddNumbers)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("****************************************");
-            List<int> Even = Enumerable.Range(0, 100).ToList();
-            List<int> EvenNumbers = Helper.FindNumbers(Even, Conditions.CheckEven);
-            foreach (int item in EvenNumbers)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("****************************************");
-            List<int> Divisable7 = Enumerable.Range(0, 100).ToList();
-            List<int> NumbersDivisableBySeven = Helper.FindNumbers(Divisable7, Conditions.CheckDivisableBySeven);
-            foreach (int item in NumbersDivisableBySeven)
+            #region Example 03 [Without Generics]
+            //List<int> Odd = Enumerable.Range(0, 100).ToList();
+            //List<int> OddNumbers = Helper.FindElements(Odd,Conditions.CheckOdd);
+            //foreach (int item in OddNumbers)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("****************************************");
+            //List<int> Even = Enumerable.Range(0, 100).ToList();
+            //List<int> EvenNumbers = Helper.FindElements(Even,Conditions.CheckEven);
+            //foreach (int item in EvenNumbers)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("****************************************");
+            //List<int> Divisable7 = Enumerable.Range(0, 100).ToList();
+            //List<int> NumbersDivisableBySeven = Helper.FindElements(Divisable7,Conditions.CheckDivisableBySeven);
+            //foreach (int item in NumbersDivisableBySeven)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Delegate Example 03 [With Generics]
+            List<string> Names = new List<string> { "Ali", "Mostafa", "Osama", "Adel" };
+            ConditionsFuncDelegate<String> conditionsFuncDelegate = Conditions.CheckStringLength;
+            List<string> StingResult = Helper.FindElements(Names, conditionsFuncDelegate);
+            foreach (string item in StingResult)
             {
                 Console.WriteLine(item);
             }

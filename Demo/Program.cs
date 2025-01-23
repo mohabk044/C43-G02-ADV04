@@ -82,15 +82,15 @@
             #endregion
 
             #region Built-in Delegate
-            Predicate<int> predicate = SomeFunctions.Test;
-            predicate.Invoke(5);
-            //predicate(10); //Syntsx Sugar
-            //----------------------------------------------
-            Func<int, string> func = SomeFunctions.Cast;
-            func.Invoke(10);
-            //-------------------------------------------------
-            Action<string> action = SomeFunctions.Print;
-            action.Invoke("Mostafa");
+            //Predicate<int> predicate = SomeFunctions.Test;
+            //predicate.Invoke(5);
+            ////predicate(10); //Syntsx Sugar
+            ////----------------------------------------------
+            //Func<int, string> func = SomeFunctions.Cast;
+            //func.Invoke(10);
+            ////-------------------------------------------------
+            //Action<string> action = SomeFunctions.Print;
+            //action.Invoke("Mostafa");
             #endregion
         }
     }

@@ -8,10 +8,10 @@ namespace Assignment
 {
     internal class BookProcessor
     {
-        public static void ProcessBooks(string parameter, BookFuncDelegate bookMethod)
-        {
-            string result = bookMethod(parameter);
-            Console.WriteLine(result);
-        }
+        //public static void ProcessBooks(string parameter, BookFuncDelegate bookMethod)
+        //{
+        //    string result = bookMethod(parameter);
+        //    Console.WriteLine(result);
+        //}
     }
 }

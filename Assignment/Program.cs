@@ -12,9 +12,14 @@
 
             #region Part 02 - Q 02 P.1
 
-            // Use the user-defined delegate
-            BookFuncDelegate myDelegate = BookFunctions.FindBookByTitle;
-            BookProcessor.ProcessBooks("To Kill a Mockingbird", myDelegate);
+            //// Use the user-defined delegate
+            //BookFuncDelegate myDelegate = BookFunctions.FindBookByTitle;
+            //BookProcessor.ProcessBooks("To Kill a Mockingbird", myDelegate);
+            #endregion
+
+            #region Part 02 - Q 02 P.2
+            Func<string, string> myDelegate = BookFunctions.FindBookByTitle;
+            Console.WriteLine(myDelegate.Invoke("To Kill a Mockingbird"));
             #endregion
         }
     }

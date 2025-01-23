@@ -6,39 +6,9 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal class SortingAlgorithms
+    internal class SortingAlgorithms<T>
     {
-        public static void BubbleSortAsc(int[] arr)
-        {
-            if (arr is not null)
-            {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    for (int j = 0; j < arr.Length - i - 1; j++)
-                    {
-                        if (arr[j] > arr[j + 1])
-                            Swap(ref arr[j], ref arr[j + 1]);
-                    }
-                }
-            }
-        }
-
-        public static void BubbleSortDes(int[] arr)
-        {
-            if (arr is not null)
-            {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    for (int j = 0; j < arr.Length - i - 1; j++)
-                    {
-                        if (arr[j] < arr[j + 1])
-                            Swap(ref arr[j], ref arr[j + 1]);
-                    }
-                }
-            }
-        }
-
-        public static void BubbleSort(int[] arr, SortingTypesFuncDelegate sortingType)
+        public static void BubbleSort(T[] arr, SortingTypesFuncDelegate<T> sortingType)
         {
             if (arr is not null && sortingType is not null)
             {
@@ -52,9 +22,9 @@ namespace Demo
                 }
             }
         }
-        private static void Swap(ref int X, ref int Y)
+        private static void Swap(ref T X, ref T Y)
         {
-            int temp = X;
+            T temp = X;
             X = Y;
             Y = temp;
         }
